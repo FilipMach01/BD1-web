@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BD Kutná Hora - Strakoschova</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c0c8cd",
+              "on-background": "#181c1c",
+              "on-secondary-fixed-variant": "#274482",
+              "secondary-fixed": "#d9e2ff",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f1f4f3",
+              "tertiary-fixed-dim": "#b6c5f6",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e0e3e2",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#ebeeed",
+              "on-secondary-fixed": "#001945",
+              "on-primary-container": "#9bd7f7",
+              "tertiary": "#304069",
+              "inverse-surface": "#2d3131",
+              "inverse-primary": "#92cfee",
+              "secondary": "#415d9b",
+              "on-primary-fixed": "#001e2b",
+              "surface": "#f7faf9",
+              "secondary-fixed-dim": "#b0c6ff",
+              "on-primary-fixed-variant": "#004d66",
+              "primary-fixed-dim": "#92cfee",
+              "on-secondary-container": "#2c4987",
+              "surface-variant": "#e0e3e2",
+              "surface-container-high": "#e6e9e8",
+              "surface-bright": "#f7faf9",
+              "on-surface-variant": "#40484d",
+              "surface-dim": "#d7dbda",
+              "on-tertiary-fixed-variant": "#36456f",
+              "outline": "#70787d",
+              "background": "#f7faf9",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#071941",
+              "primary-fixed": "#c0e8ff",
+              "inverse-on-surface": "#eef1f0",
+              "tertiary-fixed": "#dae2ff",
+              "primary": "#00475e",
+              "tertiary-container": "#485782",
+              "surface-tint": "#236580",
+              "on-tertiary-container": "#bfceff",
+              "on-surface": "#181c1c",
+              "secondary-container": "#a0baff",
+              "primary-container": "#1a5f7a",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f7faf9]/80 dark:bg-[#181c1c]/80 backdrop-blur-md flex justify-between items-center px-8 h-16 w-full shadow-none">
+<div class="text-xl font-bold text-[#00475e] dark:text-[#ffffff] font-public-sans tracking-tight">
+            BD Kutná Hora
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#00475e] dark:text-[#ffffff] border-b-2 border-[#00475e] pb-1 font-public-sans tracking-tight transition-colors" href="index.html">Domů</a>
+<a class="text-[#40484d] dark:text-[#c0c8cd] hover:text-[#00475e] dark:hover:text-[#ffffff] transition-colors font-public-sans tracking-tight" href="nastenka.html">Nástěnka</a>
+<a class="text-[#40484d] dark:text-[#c0c8cd] hover:text-[#00475e] dark:hover:text-[#ffffff] transition-colors font-public-sans tracking-tight" href="zakladni-info.html">Dokumenty</a>
+<a class="text-[#40484d] dark:text-[#c0c8cd] hover:text-[#00475e] dark:hover:text-[#ffffff] transition-colors font-public-sans tracking-tight" href="kontakty.html">Kontakty</a>
+</div>
+<div class="relative items-center gap-4 flex" id="settings-container">
+<button class="flex items-center gap-2 text-[#40484d] dark:text-[#c0c8cd] hover:text-[#00475e] dark:hover:text-[#ffffff] transition-all active:opacity-70" id="settings-button">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="hidden sm:inline font-public-sans font-medium text-sm">Nastavení</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="hidden absolute right-0 top-full mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 py-2 z-50" id="settings-menu">
+<div class="px-4 py-2 text-xs font-bold text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/20 mb-1">
+      Volby
+    </div>
+<button class="w-full flex items-center gap-3 px-4 py-2 text-sm text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">language</span>
+<span>Jazyk: Čeština</span>
+</button>
+<button class="w-full flex items-center gap-3 px-4 py-2 text-sm text-on-surface hover:bg-surface-container-high transition-colors" id="theme-toggle">
+<span class="material-symbols-outlined text-lg dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined text-lg hidden dark:inline">light_mode</span>
+<span class="dark:hidden">Tmavý režim</span>
+<span class="hidden dark:inline">Světlý režim</span>
+</button>
+<a href="admin.html" class="w-full flex items-center gap-3 px-4 py-2 text-sm text-on-surface hover:bg-surface-container-high transition-colors no-underline">
+<span class="material-symbols-outlined text-lg">admin_panel_settings</span>
+<span>Administrace</span>
+</a>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section: Architectural Statement -->
+<section class="relative w-full h-[614px] flex items-center bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="Moderní architektura bytového domu v Kutné Hoře" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz0uqjxeyUGwhv69wn00K_W1rKPTk1XGPshqyjZ1vB1g8fHpS5UTd51XBEzRj7mu6L6XyO6GKp42E5pyHVV1g062sD_TZymNBRS_d2KgHvC5Ptv_doLiTXff3T7VPNZEC5ScoXS2iSgWXpyrsGXvo3EWJdIA7jllojlkY-GJVlc5YchuvmZHnX-oaAgV5RGSczI0ElTO5CdkvsF4XE6xDrbsGzjwSEkACsiJsGj3qORIitH5mQVgw-L759vozdrmOJmEN78tGgdCI"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary via-primary-container/40 to-transparent"></div>
+<div class="container mx-auto px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8">
+<h1 class="text-on-primary text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6">
+                        Domov s historickým <br/><span class="text-primary-fixed">přesahem.</span>
+</h1>
+<p class="text-primary-fixed/80 text-lg md:text-xl max-w-xl font-light leading-relaxed">
+                        Bytové družstvo Kutná Hora, Strakoschova. Transparentní správa, moderní zázemí a úcta k lokalitě.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Main Navigation Hub -->
+<section class="container mx-auto px-8 -mt-20 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Notice Board Card (Nástěnka) -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-none group hover:bg-primary-fixed transition-all duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="dashboard">dashboard</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">3 Nové</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-2">Nástěnka</h3>
+<p class="text-on-surface-variant group-hover:text-primary transition-colors leading-relaxed mb-6">Aktuální oznámení, plánované odstávky a zápisy ze schůzí.</p>
+<a class="inline-flex items-center text-primary font-bold gap-2" href="nastenka.html">
+                        Vstoupit do archivu
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Info Card (Základní info) -->
+<div class="bg-surface-container-high p-8 rounded-xl shadow-none">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="info">info</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-2">Základní info</h3>
+<div class="space-y-3 mt-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">IČO</span>
+<span class="text-on-surface font-medium">234 45 823</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Sídlo</span>
+<span class="text-on-surface font-medium">Strakoschova, Kutná Hora</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Právní forma</span>
+<span class="text-on-surface font-medium">Bytové družstvo</span>
+</div>
+</div>
+</div>
+<!-- Contacts Card (Kontakty) -->
+<a href="kontakty.html" style="text-decoration:none;color:inherit;display:block" class="bg-surface-container-lowest p-8 rounded-xl shadow-none group transition-all">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="contact_phone">contact_phone</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-2">Kontakty</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Spojte se s předsednictvem nebo nahlaste technickou závadu.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="phone">phone</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter">Pohotovost</p>
+<p class="text-primary font-bold">+420 800 123 456</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Detail Section -->
+<section class="container mx-auto px-8 py-24 grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-5">
+<h2 class="text-4xl font-extrabold tracking-tighter text-primary mb-8">Tradiční správa v moderním pojetí</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg mb-8">
+                    Naším cílem je zajistit bezproblémový chod domu s důrazem na energetickou efektivitu a dlouhodobou udržitelnost hodnoty vašich bytů. Každý člen má přístup k digitální dokumentaci a transparentnímu hospodaření.
+                </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-bold text-primary">Stanovy online</p>
+<p class="text-sm text-on-surface-variant">Všechna pravidla dostupná na jedno kliknutí v sekci Dokumenty.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="payments">payments</span>
+<div>
+<p class="font-bold text-primary">Fond oprav</p>
+<p class="text-sm text-on-surface-variant">Aktuální přehled čerpání a plánovaných investic pro rok 2024.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 bg-surface-container-low rounded-xl overflow-hidden min-h-[400px]">
+<img class="w-full h-full object-cover" data-alt="Čistý a moderní interiér společných prostor domu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsnnhbjiekCqz00w91dhXUeSJhKza4hAoryO67KSDq2lb8gTIRKU5FXsdIzZaoI-wqLisEU7W629HN3yLisNn-qMg6y_4K_n_IJBuOUSWI_8PTwn_SARK2PoVYT07sMb9wd9yGS4dcQ_hBDcMTej6dX0BE9absKLpSfAWUJhniCz40VrWL2Jydkvd4kRO3_vfvaVCx0wnSP-wDekjBkevQ8zKCIMbNao4Mn9NLMaHS5s3KaAfF7dnkOnhkgsEHl5_YixRn6OldrvM"/>
+</div>
+</section>
+<!-- Location Section -->
+<section class="bg-surface-container-lowest py-20">
+<div class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="rounded-xl overflow-hidden shadow-none aspect-video bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Mapa lokality Strakoschova v Kutné Hoře" data-location="Kutná Hora" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyqiyUEgMZGV8MXat1xiVv67yKGS0MROnTFwaXcgmzSnNBYdzwEPrlAWlsSe91X-WZOlMGF4qB7IxhANHbC4INAmDDydchluXqgMhc3AfH2Yi5sx61s6anp26CXE17zILW06NDj25xm2-h4hvsgpbZr-G6PiXUt597i1BBxD3_Q74CU-VqpfW2zffvZ9QeV2cOwoAfpVZvcojsKk1Mpv75j1zGA8IjjgwJhd5djpVLid51VMO2Vf7sc8CBiwQPlejkb33eXyf3xPE"/>
+</div>
+<div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-4 block">Lokalita</span>
+<h2 class="text-3xl font-bold text-primary mb-6">Strakoschova, Kutná Hora</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Nacházíme se v klidné rezidenční oblasti s výbornou dostupností do centra historického jádra města a veškerou občanskou vybaveností v bezprostřední blízkosti.
+                    </p>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-md font-bold hover:shadow-lg transition-all active:scale-95">
+                        Zobrazit na mapě
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-0 mt-20 bg-[#f1f4f3] dark:bg-[#1c2020] flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full">
+<div class="flex flex-col gap-2 mb-8 md:mb-0">
+<p class="font-public-sans text-xs leading-relaxed text-[#40484d] dark:text-[#c0c8cd]">
+                © 2024 Bytové družstvo Kutná Hora. Všechna práva vyhrazena.
+            </p>
+<p class="font-public-sans text-[10px] text-[#40484d]/60">IČO: 234 45 823 | DIČ: CZ23445823</p>
+</div>
+<div class="flex gap-8">
+<a class="font-public-sans text-xs leading-relaxed text-[#40484d] hover:text-[#00475e] transition-colors" href="zakladni-info.html">Ochrana údajů</a>
+<a class="font-public-sans text-xs leading-relaxed text-[#40484d] hover:text-[#00475e] transition-colors" href="zakladni-info.html">Stanovy</a>
+<a class="font-public-sans text-xs leading-relaxed text-[#40484d] hover:text-[#00475e] transition-colors" href="kontakty.html">Kontakt</a>
+<a class="font-public-sans text-xs leading-relaxed text-[#40484d] hover:text-[#00475e] transition-colors" href="kontakty.html">Podpora</a>
+</div>
+</footer>
+<script>
+  const settingsBtn = document.getElementById('settings-button');
+  const settingsMenu = document.getElementById('settings-menu');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  // Toggle Dropdown
+  settingsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsMenu.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', () => {
+    settingsMenu.classList.add('hidden');
+  });
+
+  // Dark Mode Toggle
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.documentElement.classList.toggle('dark');
+    // Keep menu open for immediate feedback or close it
+    // settingsMenu.classList.add('hidden');
+  });
+</script></body></html>
