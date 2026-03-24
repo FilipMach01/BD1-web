@@ -4,10 +4,74 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>BD Kutná Hora - Strakoschova</title>
-<link rel="stylesheet" href="style.css"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c0c8cd",
+              "on-background": "#181c1c",
+              "on-secondary-fixed-variant": "#274482",
+              "secondary-fixed": "#d9e2ff",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f1f4f3",
+              "tertiary-fixed-dim": "#b6c5f6",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e0e3e2",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#ebeeed",
+              "on-secondary-fixed": "#001945",
+              "on-primary-container": "#9bd7f7",
+              "tertiary": "#304069",
+              "inverse-surface": "#2d3131",
+              "inverse-primary": "#92cfee",
+              "secondary": "#415d9b",
+              "on-primary-fixed": "#001e2b",
+              "surface": "#f7faf9",
+              "secondary-fixed-dim": "#b0c6ff",
+              "on-primary-fixed-variant": "#004d66",
+              "primary-fixed-dim": "#92cfee",
+              "on-secondary-container": "#2c4987",
+              "surface-variant": "#e0e3e2",
+              "surface-container-high": "#e6e9e8",
+              "surface-bright": "#f7faf9",
+              "on-surface-variant": "#40484d",
+              "surface-dim": "#d7dbda",
+              "on-tertiary-fixed-variant": "#36456f",
+              "outline": "#70787d",
+              "background": "#f7faf9",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#071941",
+              "primary-fixed": "#c0e8ff",
+              "inverse-on-surface": "#eef1f0",
+              "tertiary-fixed": "#dae2ff",
+              "primary": "#00475e",
+              "tertiary-container": "#485782",
+              "surface-tint": "#236580",
+              "on-tertiary-container": "#bfceff",
+              "on-surface": "#181c1c",
+              "secondary-container": "#a0baff",
+              "primary-container": "#1a5f7a",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
 <style>
         body { font-family: 'Public Sans', sans-serif; }
         .material-symbols-outlined {
@@ -64,7 +128,7 @@
 <div class="container mx-auto px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8">
 <div class="md:col-span-8">
 <h1 class="text-on-primary text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6">
-                        Bytové družstvo <br/><span class="text-primary-fixed">Kutná Hora</span>
+                        Domov s historickým <br/><span class="text-primary-fixed">přesahem.</span>
 </h1>
 <p class="text-primary-fixed/80 text-lg md:text-xl max-w-xl font-light leading-relaxed">
                         Bytové družstvo Kutná Hora, Strakoschova. Transparentní správa, moderní zázemí a úcta k lokalitě.
@@ -79,7 +143,7 @@
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-none group hover:bg-primary-fixed transition-all duration-300">
 <div class="flex justify-between items-start mb-12">
 <span class="material-symbols-outlined text-4xl text-primary" data-icon="dashboard">dashboard</span>
-<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full" data-post-count>3 Nové</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">3 Nové</span>
 </div>
 <h3 class="text-2xl font-bold text-primary mb-2">Nástěnka</h3>
 <p class="text-on-surface-variant group-hover:text-primary transition-colors leading-relaxed mb-6">Aktuální oznámení, plánované odstávky a zápisy ze schůzí.</p>
@@ -89,7 +153,7 @@
 </a>
 </div>
 <!-- Info Card (Základní info) -->
-<a href="zakladni-info.html" style="text-decoration:none;color:inherit;display:block" class="bg-surface-container-high p-8 rounded-xl shadow-none group hover:bg-surface-container-highest transition-all duration-300">
+<div class="bg-surface-container-high p-8 rounded-xl shadow-none">
 <div class="flex justify-between items-start mb-12">
 <span class="material-symbols-outlined text-4xl text-primary" data-icon="info">info</span>
 </div>
@@ -108,7 +172,7 @@
 <span class="text-on-surface font-medium">Bytové družstvo</span>
 </div>
 </div>
-</a>
+</div>
 <!-- Contacts Card (Kontakty) -->
 <a href="kontakty.html" style="text-decoration:none;color:inherit;display:block" class="bg-surface-container-lowest p-8 rounded-xl shadow-none group transition-all">
 <div class="flex justify-between items-start mb-12">
@@ -130,32 +194,23 @@
 </div>
 </div>
 </section>
-<!-- Asymmetric Detail Section -->
-<section class="container mx-auto px-8 py-24 grid grid-cols-1 md:grid-cols-12 gap-16">
-<div class="md:col-span-5">
-<h2 class="text-4xl font-extrabold tracking-tighter text-primary mb-8">Tradiční správa v moderním pojetí</h2>
-<p class="text-on-surface-variant leading-relaxed text-lg mb-8">
-                    Naším cílem je zajistit bezproblémový chod domu s důrazem na energetickou efektivitu a dlouhodobou udržitelnost hodnoty vašich bytů. Každý člen má přístup k digitální dokumentaci a transparentnímu hospodaření.
-                </p>
-<div class="flex flex-col gap-6">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-1" data-icon="check_circle">check_circle</span>
-<div>
-<p class="font-bold text-primary">Stanovy online</p>
-<p class="text-sm text-on-surface-variant">Všechna pravidla dostupná na jedno kliknutí v sekci Dokumenty.</p>
+<!-- Compact Info Strip -->
+<section class="container mx-auto px-8 py-12">
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 min-w-0">
+<h2 class="text-2xl font-bold tracking-tight text-primary mb-3">Transparentní správa domu</h2>
+<p class="text-on-surface-variant leading-relaxed text-sm">Digitální dokumentace, přehledné hospodaření a vše důležité na jednom místě.</p>
 </div>
+<div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+<a href="zakladni-info.html" class="inline-flex items-center gap-3 px-6 py-4 bg-surface-container-lowest rounded-lg hover:shadow-md transition-all no-underline">
+<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+<span class="font-bold text-primary text-sm">Stanovy online</span>
+</a>
+<a href="zakladni-info.html" class="inline-flex items-center gap-3 px-6 py-4 bg-surface-container-lowest rounded-lg hover:shadow-md transition-all no-underline">
+<span class="material-symbols-outlined text-primary text-2xl">payments</span>
+<span class="font-bold text-primary text-sm">Fond oprav 2025</span>
+</a>
 </div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-1" data-icon="payments">payments</span>
-<div>
-<p class="font-bold text-primary">Fond oprav</p>
-<p class="text-sm text-on-surface-variant">Aktuální přehled čerpání a plánovaných investic pro rok 2025.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="md:col-span-7 bg-surface-container-low rounded-xl overflow-hidden min-h-[400px]">
-<img class="w-full h-full object-cover" data-alt="Čistý a moderní interiér společných prostor domu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsnnhbjiekCqz00w91dhXUeSJhKza4hAoryO67KSDq2lb8gTIRKU5FXsdIzZaoI-wqLisEU7W629HN3yLisNn-qMg6y_4K_n_IJBuOUSWI_8PTwn_SARK2PoVYT07sMb9wd9yGS4dcQ_hBDcMTej6dX0BE9absKLpSfAWUJhniCz40VrWL2Jydkvd4kRO3_vfvaVCx0wnSP-wDekjBkevQ8zKCIMbNao4Mn9NLMaHS5s3KaAfF7dnkOnhkgsEHl5_YixRn6OldrvM"/>
 </div>
 </section>
 <!-- Location Section -->
@@ -181,7 +236,7 @@
 <footer class="w-full border-t-0 mt-20 bg-[#f1f4f3] dark:bg-[#1c2020] flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full">
 <div class="flex flex-col gap-2 mb-8 md:mb-0">
 <p class="font-public-sans text-xs leading-relaxed text-[#40484d] dark:text-[#c0c8cd]">
-                © <span class="bd-year">2025</span> Bytové družstvo Kutná Hora. Všechna práva vyhrazena.
+                © 2024 Bytové družstvo Kutná Hora. Všechna práva vyhrazena.
             </p>
 <p class="font-public-sans text-[10px] text-[#40484d]/60">IČO: 234 45 823 | DIČ: CZ23445823</p>
 </div>
@@ -215,5 +270,5 @@
     // Keep menu open for immediate feedback or close it
     // settingsMenu.classList.add('hidden');
   });
-</script>
-<script src="site.js"></script></body></html>
+</script><script src="app.js"></script>
+</body></html>
