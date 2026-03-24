@@ -1,192 +1,200 @@
 <!DOCTYPE html>
+<html class="light" lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-<html class="light" lang="cs"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="stylesheet" href="style.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         body { font-family: 'Public Sans', sans-serif; }
+        
+        /* Definice barev pro případ, že style.css není načten */
+        :root {
+            --primary: #00475e;
+            --primary-container: #1a5f7a;
+        }
+        .bg-primary { background-color: #00475e; }
+        .text-primary { color: #00475e; }
+        .bg-primary-container { background-color: #1a5f7a; }
     </style>
 </head>
-<body class="bg-background text-on-surface antialiased" data-mode="connect">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#f7faf9]/80 backdrop-blur-md shadow-sm flex justify-between items-center px-8 h-16 max-w-full font-['Public_Sans'] antialiased tracking-tight">
-<a href="index.html" class="text-xl font-bold text-[#00475e] no-underline transition-all active:scale-95 duration-200">BD Kutná Hora</a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-[#40484d] hover:text-[#00475e] transition-colors" href="nastenka.html">Nástěnka</a>
-<a class="text-[#00475e] font-bold border-b-2 border-[#00475e] pb-1" href="kontakty.html">Kontakty</a>
-<a class="text-[#40484d] hover:text-[#00475e] transition-colors" href="zakladni-info.html">Základní info</a>
-<a class="text-[#40484d] hover:text-[#00475e] transition-colors" href="admin.html">Admin</a>
-</div>
-<div class="flex gap-4 items-center"><button class="flex items-center gap-2 text-[#00475e] hover:bg-[#f1f4f3] rounded-md px-3 py-2 transition-all active:scale-95 duration-200">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-medium">Nastavení</span>
-</button></div>
+<body class="bg-[#f7faf9] text-[#181c1c] antialiased flex flex-col min-h-screen">
+
+<button class="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-[#00475e] text-white p-3 rounded-r-xl shadow-lg hover:pr-5 transition-all active:scale-95 duration-200 flex items-center justify-center" title="Zpět na hlavní stranu" onclick="window.location.href='index.html'">
+    <span class="material-symbols-outlined">arrow_back</span>
+</button>
+
+<nav class="fixed top-0 w-full z-50 bg-[#f7faf9]/80 backdrop-blur-md shadow-sm border-b border-[#c0c8cd]/30 flex justify-between items-center px-8 h-16 max-w-full antialiased tracking-tight">
+    <a href="index.html" class="text-xl font-bold text-[#00475e] no-underline transition-all active:scale-95 duration-200">BD Kutná Hora</a>
+    <div class="hidden md:flex gap-8 items-center">
+        <a class="text-[#40484d] hover:text-[#00475e] transition-colors no-underline" href="nastenka.html">Nástěnka</a>
+        <a class="text-[#00475e] font-bold border-b-2 border-[#00475e] pb-1 no-underline" href="kontakty.html">Kontakty</a>
+        <a class="text-[#40484d] hover:text-[#00475e] transition-colors no-underline" href="zakladni-info.html">Základní info</a>
+        <a class="text-[#40484d] hover:text-[#00475e] transition-colors no-underline" href="admin.html">Admin</a>
+    </div>
+    <div class="flex gap-4 items-center">
+        <button class="flex items-center gap-2 text-[#00475e] hover:bg-[#f1f4f3] rounded-md px-3 py-2 transition-all active:scale-95 duration-200">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-medium text-sm">Nastavení</span>
+        </button>
+    </div>
 </nav>
-<main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
-<!-- Hero Section / Header -->
-<header class="mb-16">
-<h1 class="text-5xl font-extrabold tracking-tight text-primary mb-4">Kontakty</h1>
-<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
-                Jsme tu pro vás. Ať už řešíte technický problém, vyúčtování nebo potřebujete mluvit s vedením družstva, níže naleznete příslušné kontaktní osoby.
-            </p>
-</header>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Left Column: Primary Contacts & Emergency -->
-<div class="lg:col-span-8 space-y-12">
-<!-- Emergency Section (Havarijní služba) -->
-<section class="bg-primary-container text-on-primary-fixed rounded-xl p-8 relative overflow-hidden shadow-sm">
-<div class="relative z-10">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
-<h2 class="text-3xl font-bold tracking-tight">Havarijní služba 24/7</h2>
-</div>
-<div class="grid md:grid-cols-2 gap-8">
-<div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-<p class="text-sm font-bold uppercase tracking-widest opacity-80 mb-2">Instalatérství &amp; Topení</p>
-<a class="text-2xl font-extrabold hover:underline" href="tel:+420800123456">+420 800 123 456</a>
-</div>
-<div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-<p class="text-sm font-bold uppercase tracking-widest opacity-80 mb-2">Elektroinstalace</p>
-<a class="text-2xl font-extrabold hover:underline" href="tel:+420800654321">+420 800 654 321</a>
-</div>
-</div>
-<p class="mt-6 text-sm italic opacity-90">Služba je určena výhradně pro řešení havárií ohrožujících majetek nebo zdraví obyvatel mimo pracovní dobu.</p>
-</div>
-<div class="absolute -right-20 -top-20 opacity-10">
-<span class="material-symbols-outlined text-[240px]">warning</span>
-</div>
-</section>
-<!-- Management & Administration (Bento Grid Style) -->
-<div class="grid md:grid-cols-2 gap-6">
-<!-- Vedení -->
-<section class="bg-surface-container-low rounded-xl p-8">
-<h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined">corporate_fare</span>
-                            Vedení
-                        </h3>
-<div class="space-y-8">
-<div>
-<h4 class="text-lg font-bold text-on-surface">Ing. Marek Mach</h4>
-<p class="text-sm text-on-surface-variant mb-3">Předseda představenstva</p>
-</div>
-<div class="">
-<h4 class="text-lg font-bold text-on-surface">Veronika Páleníčková</h4>
-<p class="text-sm text-on-surface-variant mb-3">Kontaktní osoba</p>
-<div class="flex flex-col gap-1 text-sm"><a class="text-primary hover:underline flex items-center gap-2" href="/cdn-cgi/l/email-protection#3e4e5f525b50575d5551485f7e52575c5b4c4a475d5651575d5b105d44"><span class="material-symbols-outlined text-base">mail</span> <span class="__cf_email__" data-cfemail="b0c0d1dcd5ded9d3dbdfc6d1f0dcd9d2d5c2c4c9d3d8dfd9d3d59ed3ca">[email&#160;protected]</span></a><a class="text-primary hover:underline flex items-center gap-2" href="tel:+420731455329"><span class="material-symbols-outlined text-base">call</span> 731 455 329</a></div>
-</div>
-</div>
-</section>
-<!-- Správa Sections Stacked -->
-<div class="space-y-6">
-<!-- Technická správa -->
-<section class="bg-surface-container-lowest rounded-xl p-8 border-l-4 border-secondary shadow-sm">
-<h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined">engineering</span>
-                                Technická správa
-                            </h3>
-<div>
-<h4 class="font-bold text-on-surface">Petr Marek</h4>
-<p class="text-sm text-on-surface-variant mb-3">Hlavní technik</p>
-<a class="text-primary font-medium hover:underline flex items-center gap-2" href="tel:+420777123456">
-<span class="material-symbols-outlined text-base">call</span> +420 777 123 456
-                                </a>
-</div>
-</section>
-<!-- Ekonomická správa -->
-<section class="bg-surface-container-lowest rounded-xl p-8 border-l-4 border-tertiary shadow-sm">
-<h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined">payments</span>
-                                Ekonomická správa
-                            </h3>
-<div>
-<h4 class="font-bold text-on-surface">Jana Králová</h4>
-<p class="text-sm text-on-surface-variant mb-3">Účetní</p>
-<a class="text-primary font-medium hover:underline flex items-center gap-2" href="/cdn-cgi/l/email-protection#066d74676a6970674664626d737268676e69746728657c">
-<span class="material-symbols-outlined text-base">mail</span> <span class="__cf_email__" data-cfemail="ef849d8e8380998eaf8d8b849a9b818e87809d8ec18c95">[email&#160;protected]</span>
-                                </a>
-</div>
-</section>
-</div>
-</div>
-</div>
-<!-- Right Column: Info & Location -->
-<aside class="lg:col-span-4 space-y-8">
-<!-- Office Hours -->
-<section class="bg-surface-container-high rounded-xl p-8">
-<h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined">description</span>
-                        Důležité dokumenty
-                    </h3>
-<div class="space-y-4">
-<a class="flex justify-between items-center py-3 border-b border-outline-variant/30 group hover:text-primary transition-colors" href="#">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">picture_as_pdf</span>
-<span class="font-medium">Žádost o opravu</span>
-</div>
-<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:translate-x-1 transition-transform">download</span>
-</a>
-<a class="flex justify-between items-center py-3 border-b border-outline-variant/30 group hover:text-primary transition-colors" href="#">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">picture_as_pdf</span>
-<span class="font-medium">Evidenční list</span>
-</div>
-<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:translate-x-1 transition-transform">download</span>
-</a>
-<a class="flex justify-between items-center py-3 group hover:text-primary transition-colors" href="#">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">article</span>
-<span class="font-medium">Stanovy družstva</span>
-</div>
-<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:translate-x-1 transition-transform">download</span>
-</a>
-</div>
-<div class="mt-8 p-4 bg-white/40 rounded-lg text-sm text-on-surface-variant leading-relaxed">
-                        Dokumenty jsou ve formátu PDF. Pro stažení klikněte na název souboru nebo ikonu.
+
+<main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto flex-grow w-full">
+    <header class="mb-16">
+        <h1 class="text-5xl font-extrabold tracking-tight text-[#00475e] mb-4">Kontakty</h1>
+        <p class="text-[#40484d] text-lg max-w-2xl leading-relaxed">
+            Jsme tu pro vás. Ať už řešíte technický problém, vyúčtování nebo potřebujete mluvit s vedením družstva, níže naleznete příslušné kontaktní osoby.
+        </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8 space-y-12">
+            <section class="bg-[#1a5f7a] text-white rounded-xl p-8 relative overflow-hidden shadow-sm">
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+                        <h2 class="text-3xl font-bold tracking-tight">Havarijní služba 24/7</h2>
                     </div>
-</section>
-<!-- Location Map -->
-<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
-<div class="h-48 w-full bg-surface-dim relative group">
-<img alt="Mapa Kutné Hory" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract map of Kutna Hora with city layout" data-location="Kutná Hora" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHIZf-_ea0ZMMR1GvD5-EffJlLLTkRDeEFjugAvEyueTG48IhLyyYfnul-Uc2IPm5Ak1aeGuQDLHiYY3XtbMoknvXWwSG8c8xYnOXbIQPjHfG-H8URK2F4q4ZTtB385jMIeSgOEMjj0mqUSe6papx8TKuWmasHUMyxVleSdFy5uqLQyvfFq1zZPYt_BG3xPCV_TENvE32Fm3qHMHyIBOHoRXbpiYby6jJo4nc0XmUU4LQxpFmiadf75UrAJIgp5cZ9AAPTFCYrHnM"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="bg-primary text-white p-3 rounded-full shadow-lg">
-<span class="material-symbols-outlined text-3xl">location_on</span>
-</div>
-</div>
-</div>
-<div class="p-8">
-<h3 class="font-bold text-lg mb-2">Sídlo družstva</h3>
-<p class="text-on-surface-variant text-sm mb-4">
-                            Strakoschova 123<br/>
-                            284 01 Kutná Hora
-                        </p>
-<button class="w-full py-3 bg-surface-container-highest text-on-surface font-bold rounded-md hover:bg-surface-dim transition-colors flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-lg">directions</span>
-                            Navigovat
-                        </button>
-</div>
-</section>
-</aside>
-</div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                            <p class="text-sm font-bold uppercase tracking-widest opacity-80 mb-2">Instalatérství & Topení</p>
+                            <a class="text-2xl font-extrabold hover:underline text-white no-underline" href="tel:+420800123456">+420 800 123 456</a>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                            <p class="text-sm font-bold uppercase tracking-widest opacity-80 mb-2">Elektroinstalace</p>
+                            <a class="text-2xl font-extrabold hover:underline text-white no-underline" href="tel:+420800654321">+420 800 654 321</a>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm italic opacity-90">Služba je určena výhradně pro řešení havárií ohrožujících majetek nebo zdraví obyvatel mimo pracovní dobu.</p>
+                </div>
+                <div class="absolute -right-20 -top-20 opacity-10">
+                    <span class="material-symbols-outlined text-[240px]">warning</span>
+                </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <section class="bg-white rounded-xl p-8 shadow-sm border border-[#ebeeed]">
+                    <h3 class="text-xl font-bold text-[#00475e] mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined">corporate_fare</span>
+                        Vedení
+                    </h3>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-lg font-bold text-[#181c1c]">Ing. Marek Mach</h4>
+                            <p class="text-sm text-[#40484d] mb-3">Předseda představenstva</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#181c1c]">Veronika Páleníčková</h4>
+                            <p class="text-sm text-[#40484d] mb-3">Kontaktní osoba</p>
+                            <div class="flex flex-col gap-2 text-sm">
+                                <a class="text-[#00475e] hover:underline flex items-center gap-2 no-underline" href="mailto:info@bdkh.cz">
+                                    <span class="material-symbols-outlined text-base">mail</span> info@bdkh.cz
+                                </a>
+                                <a class="text-[#00475e] hover:underline flex items-center gap-2 no-underline" href="tel:+420731455329">
+                                    <span class="material-symbols-outlined text-base">call</span> 731 455 329
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="space-y-6">
+                    <section class="bg-white rounded-xl p-8 border-l-4 border-[#415d9b] shadow-sm">
+                        <h3 class="text-lg font-bold text-[#181c1c] mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">engineering</span>
+                            Technická správa
+                        </h3>
+                        <h4 class="font-bold">Petr Marek</h4>
+                        <p class="text-sm text-[#40484d] mb-3">Hlavní technik</p>
+                        <a class="text-[#00475e] font-medium hover:underline flex items-center gap-2 no-underline" href="tel:+420777123456">
+                            <span class="material-symbols-outlined text-base">call</span> +420 777 123 456
+                        </a>
+                    </section>
+                    <section class="bg-white rounded-xl p-8 border-l-4 border-[#304069] shadow-sm">
+                        <h3 class="text-lg font-bold text-[#181c1c] mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">payments</span>
+                            Ekonomická správa
+                        </h3>
+                        <h4 class="font-bold">Jana Králová</h4>
+                        <p class="text-sm text-[#40484d] mb-3">Účetní</p>
+                        <a class="text-[#00475e] font-medium hover:underline flex items-center gap-2 no-underline" href="mailto:ucetni@bdkh.cz">
+                            <span class="material-symbols-outlined text-base">mail</span> ucetni@bdkh.cz
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+            <section class="bg-[#e6e9e8] rounded-xl p-8">
+                <h3 class="text-xl font-bold text-[#00475e] mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined">description</span>
+                    Dokumenty ke stažení
+                </h3>
+                <div class="space-y-4">
+                    <a class="flex justify-between items-center py-3 border-b border-[#c0c8cd]/30 group hover:text-[#00475e] transition-colors no-underline" href="#">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#40484d] group-hover:text-[#00475e]">picture_as_pdf</span>
+                            <span class="font-medium">Žádost o opravu</span>
+                        </div>
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">download</span>
+                    </a>
+                    <a class="flex justify-between items-center py-3 group hover:text-[#00475e] transition-colors no-underline" href="#">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#40484d] group-hover:text-[#00475e]">article</span>
+                            <span class="font-medium">Stanovy družstva</span>
+                        </div>
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">download</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-xl overflow-hidden shadow-sm border border-[#ebeeed]">
+                <div class="h-48 w-full bg-[#d7dbda] relative group flex items-center justify-center">
+                    <span class="material-symbols-outlined text-6xl text-[#70787d] opacity-20">map</span>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="bg-[#00475e] text-white p-3 rounded-full shadow-lg">
+                            <span class="material-symbols-outlined text-3xl">location_on</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-bold text-lg mb-2">Sídlo družstva</h3>
+                    <p class="text-[#40484d] text-sm mb-4">
+                        Strakoschova 123<br/>
+                        284 01 Kutná Hora
+                    </p>
+                    <button class="w-full py-3 bg-[#e0e3e2] text-[#181c1c] font-bold rounded-md hover:bg-[#d7dbda] transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-lg">directions</span>
+                        Navigovat
+                    </button>
+                </div>
+            </section>
+        </aside>
+    </div>
 </main>
-<!-- Footer -->
-<footer class="w-full mt-auto bg-[#f1f4f3] border-t border-[#c0c8cd]/15 flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4 font-['Public_Sans'] text-xs leading-relaxed text-[#00475e]">
-<div class="flex flex-col gap-2">
-<span class="font-bold text-[#00475e] text-sm">Bytové družstvo Kutná Hora Strakoschova</span>
-<span class="text-[#40484d]">© Bytové družstvo Kutná Hora Strakoschova | IČO: 234 45 823</span>
-</div>
-<div class="flex gap-6 items-center">
-<a class="text-[#40484d] hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="zakladni-info.html">Ochrana údajů</a>
-<a class="text-[#40484d] hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="zakladni-info.html">Stanovy</a>
-<a class="text-[#40484d] hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="kontakty.html">Podpora</a>
-</div>
+
+<footer class="w-full bg-[#f1f4f3] border-t border-[#c0c8cd]/15 flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4 text-xs text-[#00475e]">
+    <div class="flex flex-col gap-2">
+        <span class="font-bold text-sm">Bytové družstvo Kutná Hora Strakoschova</span>
+        <span class="text-[#40484d]">© <span id="year"></span> Bytové družstvo Kutná Hora Strakoschova | IČO: 234 45 823</span>
+    </div>
+    <div class="flex gap-6 items-center">
+        <a class="text-[#40484d] hover:text-[#00475e] transition-opacity opacity-80 no-underline" href="zakladni-info.html">Ochrana údajů</a>
+        <a class="text-[#40484d] hover:text-[#00475e] transition-opacity opacity-80 no-underline" href="kontakty.html">Kontakt</a>
+    </div>
 </footer>
-<script src="site.js"></script>
-</body></html>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
