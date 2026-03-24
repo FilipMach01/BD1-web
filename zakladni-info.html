@@ -1,202 +1,206 @@
 <!DOCTYPE html>
-
-<html class="light" lang="cs"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="stylesheet" href="style.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
+<html class="light" lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
         body { font-family: 'Public Sans', sans-serif; }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
-
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed" data-mode="connect">
-<!-- TopNavBar -->
+
+<button class="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-[#00475e] text-white p-3 rounded-r-xl shadow-lg hover:pr-5 transition-all active:scale-95 duration-200 flex items-center justify-center" title="Zpět na hlavní stranu" onclick="window.location.href='index.html'">
+    <span class="material-symbols-outlined">arrow_back</span>
+</button>
 <nav class="fixed top-0 w-full z-50 bg-[#f7faf9]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none font-['Public_Sans'] antialiased tracking-tight">
-<div class="flex justify-between items-center px-8 h-16 max-w-full">
-<a href="index.html" class="text-xl font-bold text-[#00475e] no-underline dark:text-cyan-500">BD Kutná Hora</a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-[#40484d] dark:text-slate-400 hover:text-[#00475e] transition-colors" href="nastenka.html">Nástěnka</a>
-<a class="text-[#40484d] dark:text-slate-400 hover:text-[#00475e] transition-colors" href="kontakty.html">Kontakty</a>
-<a class="text-[#00475e] dark:text-cyan-400 font-bold border-b-2 border-[#00475e] pb-1" href="zakladni-info.html">Základní info</a>
-<a class="text-[#40484d] dark:text-slate-400 hover:text-[#00475e] transition-colors" href="admin.html">Admin</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="flex items-center gap-2 px-4 py-2 hover:bg-[#f1f4f3] dark:hover:bg-slate-800 rounded-md transition-all active:scale-95 duration-200 text-[#00475e] dark:text-cyan-400 font-medium">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-sm">Nastavení</span>
-</button>
-</div>
-</div>
+    <div class="flex justify-between items-center px-8 h-16 max-w-full">
+        <a href="index.html" class="text-xl font-bold text-[#00475e] no-underline dark:text-cyan-500">BD Kutná Hora</a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-[#40484d] dark:text-slate-400 hover:text-[#00475e] transition-colors" href="nastenka.html">Nástěnka</a>
+            <a class="text-[#40484d] dark:text-slate-400 hover:text-[#00475e] transition-colors" href="kontakty.html">Kontakty</a>
+            <a class="text-[#00475e] dark:text-cyan-400 font-bold border-b-2 border-[#00475e] pb-1" href="zakladni-info.html">Základní info</a>
+            <a class="text-[#40484d] dark:text-slate-400 hover:text-[#00475e] transition-colors" href="admin.html">Admin</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="flex items-center gap-2 px-4 py-2 hover:bg-[#f1f4f3] dark:hover:bg-slate-800 rounded-md transition-all active:scale-95 duration-200 text-[#00475e] dark:text-cyan-400 font-medium">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="text-sm">Nastavení</span>
+            </button>
+        </div>
+    </div>
 </nav>
-<button class="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-surface-container-highest/80 backdrop-blur-md p-2 rounded-r-xl shadow-md hover:bg-surface-container-high transition-all active:scale-90 border-y border-r border-outline-variant/15">
-<span class="material-symbols-outlined text-primary">chevron_left</span>
-</button>
+
 <main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
-<!-- Hero Section Asymmetry -->
-<header class="mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-<div class="lg:col-span-8">
-<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-6">Základní informace</h1>
-<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-                    Přehled identifikačních údajů, bankovního spojení a úředních hodin Bytového družstva Kutná Hora Strakoschova.
-                </p>
-</div>
-<div class="lg:col-span-4 flex justify-start lg:justify-end">
-<div class="bg-secondary-container/20 px-4 py-2 rounded-full flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span class="text-secondary font-bold text-sm tracking-wide">OFICIÁLNÍ PORTÁL</span>
-</div>
-</div>
-</header>
-<!-- Bento Grid Layout -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Identity Card -->
-<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary-container">domain</span>
-</div>
-<h2 class="text-2xl font-bold text-on-surface tracking-tight">Identifikace družstva</h2>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12">
-<div>
-<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Název</label>
-<p class="text-lg font-medium text-on-surface">Bytové družstvo Kutná Hora Strakoschova</p>
-</div>
-<div>
-<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Právní forma</label>
-<p class="text-lg font-medium text-on-surface">Bytové družstvo</p>
-</div>
-<div>
-<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">IČO</label>
-<p class="text-lg font-mono font-bold text-primary">234 45 823</p>
-</div>
-<div class="">
-<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">DIČ</label>
-<p class="text-lg font-mono font-bold text-primary">CZ12345678</p>
-</div>
-</div>
-</section><section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary">group</span>
-</div>
-<h2 class="text-2xl font-bold text-on-surface tracking-tight">Vedení a kontakty</h2>
-</div>
-<div class="space-y-6">
-<div>
-<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Předseda</label>
-<p class="text-lg font-medium text-on-surface">Ing. Marek Mach</p>
-</div>
-<div>
-<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Kontaktní osoba</label>
-<p class="text-lg font-medium text-on-surface">Veronika Páleníčková</p>
-<div class="mt-2 flex flex-col gap-1">
-<a class="flex items-center gap-2 text-sm text-primary hover:underline" href="tel:731455329">
-<span class="material-symbols-outlined text-sm">call</span>
-731 455 329
-</a>
-<a class="flex items-center gap-2 text-sm text-primary hover:underline" href="/cdn-cgi/l/email-protection#ff8f9e939a91969c9490899ebf93969d9a8d8b869c9790969c9ad19c85">
-<span class="material-symbols-outlined text-sm">mail</span>
-<span class="__cf_email__" data-cfemail="e292838e878c8b81898d9483a28e8b808790969b818a8d8b8187cc8198">[email&#160;protected]</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Bank Connection Card -->
-<section class="bg-primary text-on-primary p-8 rounded-xl shadow-lg relative overflow-hidden flex flex-col justify-between">
-<div class="relative z-10">
-<span class="material-symbols-outlined text-4xl mb-6 opacity-80">account_balance</span>
-<h2 class="text-2xl font-bold mb-2 tracking-tight">Bankovní spojení</h2>
-<p class="text-on-primary/70 text-sm mb-8">Pro veškeré platby nájemného a služeb.</p>
-</div>
-<div class="relative z-10">
-<p class="text-3xl font-mono font-bold tracking-tighter mb-1">1122334455/0800</p>
-<p class="text-xs opacity-60 font-medium">Česká spořitelna, a.s.</p>
-</div>
-<div class="absolute -right-8 -bottom-8 opacity-10">
-<span class="material-symbols-outlined text-[160px]">payments</span>
-</div>
-</section>
-<!-- Office Hours Card -->
-<section class="bg-surface-container-low p-8 rounded-xl lg:row-span-2 flex flex-col">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
-</div>
-<h2 class="text-2xl font-bold text-on-surface tracking-tight">Úřední hodiny</h2>
-</div>
-<div class="space-y-4 flex-grow">
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<span class="font-medium">Pondělí</span>
-<span class="bg-surface-container-lowest px-3 py-1 rounded text-primary font-bold">08:00 – 11:00</span>
-</div>
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<span class="font-medium">Úterý</span>
-<span class="text-on-surface-variant">Zavřeno</span>
-</div>
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<span class="font-medium">Středa</span>
-<span class="bg-surface-container-lowest px-3 py-1 rounded text-primary font-bold">14:00 – 17:00</span>
-</div>
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<span class="font-medium">Čtvrtek</span>
-<span class="text-on-surface-variant">Zavřeno</span>
-</div>
-<div class="flex justify-between items-center py-2">
-<span class="font-medium">Pátek</span>
-<span class="bg-surface-container-lowest px-3 py-1 rounded text-primary font-bold">08:00 – 10:00</span>
-</div>
-</div>
-</section>
-<!-- Map & Office Location -->
-<section class="bg-surface-container-lowest p-8 rounded-xl lg:col-span-2 shadow-sm border border-outline-variant/15 grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-tertiary">location_on</span>
-</div>
-<h2 class="text-2xl font-bold text-on-surface tracking-tight">Sídlo družstva</h2>
-</div>
-<div class="mb-6">
-<p class="text-lg font-medium text-on-surface">Strakoschova 123</p>
-<p class="text-lg text-on-surface">284 01 Kutná Hora</p>
-<p class="text-on-surface-variant mt-2 italic">Budova A, 2. patro</p>
-</div>
-<button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-md font-bold flex items-center gap-2 hover:bg-surface-container-high transition-all active:scale-95">
-<span class="material-symbols-outlined text-sm">directions</span>
-                        Navigovat do sídla
-                    </button>
-</div>
-<div class="h-48 md:h-full min-h-[200px] rounded-lg overflow-hidden relative">
-<img alt="Mapa Kutná Hora" class="w-full h-full object-cover grayscale brightness-110" data-alt="Modern minimal map illustration of Kutna Hora streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsYrjqr0ANLRvSZdkzisY8FRTdWZVQEM2UyI-JTYxIS-rTBaddkeHz_645yEtRNmfBl0epNfhPSN6-aMsb-lJkXU0AxNHfmRBF7rAvr4rJ9-B4KM24wCPe_eeUHQDufFwY4TvQBPUpq-VBBN-UIAB35goEcqnnrWGQD80ZdiDoVxH3MJJSDi4dtmW_gIKuIstTiTreqBj3TUzutg5Mgnmxppu-Rg5qI51T-P1bD1dSRqRyWqbhcx8mBiNRoCC7KT8-Xr9uEUHEhsw"/>
-<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-<div class="relative">
-<div class="absolute inset-0 bg-primary animate-ping rounded-full opacity-20"></div>
-<span class="material-symbols-outlined text-primary text-4xl relative z-10" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-</div>
-</div>
-</section>
-</div>
+    <header class="mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-primary leading-none mb-6">Základní informace</h1>
+            <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Přehled identifikačních údajů, bankovního spojení a úředních hodin Bytového družstva Kutná Hora Strakoschova.
+            </p>
+        </div>
+        <div class="lg:col-span-4 flex justify-start lg:justify-end">
+            <div class="bg-secondary-container/20 px-4 py-2 rounded-full flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span class="text-secondary font-bold text-sm tracking-wide">OFICIÁLNÍ PORTÁL</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-primary-container">domain</span>
+                </div>
+                <h2 class="text-2xl font-bold text-on-surface tracking-tight">Identifikace družstva</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12">
+                <div>
+                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Název</label>
+                    <p class="text-lg font-medium text-on-surface">Bytové družstvo Kutná Hora Strakoschova</p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Právní forma</label>
+                    <p class="text-lg font-medium text-on-surface">Bytové družstvo</p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">IČO</label>
+                    <p class="text-lg font-mono font-bold text-primary">234 45 823</p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">DIČ</label>
+                    <p class="text-lg font-mono font-bold text-primary">CZ12345678</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-secondary">group</span>
+                </div>
+                <h2 class="text-2xl font-bold text-on-surface tracking-tight">Vedení a kontakty</h2>
+            </div>
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Předseda</label>
+                    <p class="text-lg font-medium text-on-surface">Ing. Marek Mach</p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1">Kontaktní osoba</label>
+                    <p class="text-lg font-medium text-on-surface">Veronika Páleníčková</p>
+                    <div class="mt-2 flex flex-col gap-1">
+                        <a class="flex items-center gap-2 text-sm text-primary hover:underline" href="tel:731455329">
+                            <span class="material-symbols-outlined text-sm">call</span>
+                            731 455 329
+                        </a>
+                        <a class="flex items-center gap-2 text-sm text-primary hover:underline" href="mailto:info@bdkh.cz">
+                            <span class="material-symbols-outlined text-sm">mail</span>
+                            info@bdkh.cz
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary text-on-primary p-8 rounded-xl shadow-lg relative overflow-hidden flex flex-col justify-between">
+            <div class="relative z-10">
+                <span class="material-symbols-outlined text-4xl mb-6 opacity-80">account_balance</span>
+                <h2 class="text-2xl font-bold mb-2 tracking-tight">Bankovní spojení</h2>
+                <p class="text-on-primary/70 text-sm mb-8">Pro veškeré platby nájemného a služeb.</p>
+            </div>
+            <div class="relative z-10">
+                <p class="text-3xl font-mono font-bold tracking-tighter mb-1">1122334455/0800</p>
+                <p class="text-xs opacity-60 font-medium">Česká spořitelna, a.s.</p>
+            </div>
+            <div class="absolute -right-8 -bottom-8 opacity-10">
+                <span class="material-symbols-outlined text-[160px]">payments</span>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low p-8 rounded-xl lg:row-span-2 flex flex-col">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+                </div>
+                <h2 class="text-2xl font-bold text-on-surface tracking-tight">Úřední hodiny</h2>
+            </div>
+            <div class="space-y-4 flex-grow">
+                <div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                    <span class="font-medium">Pondělí</span>
+                    <span class="bg-surface-container-lowest px-3 py-1 rounded text-primary font-bold">08:00 – 11:00</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                    <span class="font-medium">Úterý</span>
+                    <span class="text-on-surface-variant">Zavřeno</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                    <span class="font-medium">Středa</span>
+                    <span class="bg-surface-container-lowest px-3 py-1 rounded text-primary font-bold">14:00 – 17:00</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                    <span class="font-medium">Čtvrtek</span>
+                    <span class="text-on-surface-variant">Zavřeno</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                    <span class="font-medium">Pátek</span>
+                    <span class="bg-surface-container-lowest px-3 py-1 rounded text-primary font-bold">08:00 – 10:00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-xl lg:col-span-2 shadow-sm border border-outline-variant/15 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary">location_on</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-on-surface tracking-tight">Sídlo družstva</h2>
+                </div>
+                <div class="mb-6">
+                    <p class="text-lg font-medium text-on-surface">Strakoschova 123</p>
+                    <p class="text-lg text-on-surface">284 01 Kutná Hora</p>
+                    <p class="text-on-surface-variant mt-2 italic">Budova A, 2. patro</p>
+                </div>
+                <button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-md font-bold flex items-center gap-2 hover:bg-surface-container-high transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-sm">directions</span>
+                    Navigovat do sídla
+                </button>
+            </div>
+            <div class="h-48 md:h-full min-h-[200px] rounded-lg overflow-hidden relative">
+                <img alt="Mapa Kutná Hora" class="w-full h-full object-cover grayscale brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsYrjqr0ANLRvSZdkzisY8FRTdWZVQEM2UyI-JTYxIS-rTBaddkeHz_645yEtRNmfBl0epNfhPSN6-aMsb-lJkXU0AxNHfmRBF7rAvr4rJ9-B4KM24wCPe_eeUHQDufFwY4TvQBPUpq-VBBN-UIAB35goEcqnnrWGQD80ZdiDoVxH3MJJSDi4dtmW_gIKuIstTiTreqBj3TUzutg5Mgnmxppu-Rg5qI51T-P1bD1dSRqRyWqbhcx8mBiNRoCC7KT8-Xr9uEUHEhsw"/>
+                <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary animate-ping rounded-full opacity-20"></div>
+                        <span class="material-symbols-outlined text-primary text-4xl relative z-10" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
-<!-- Footer -->
+
 <footer class="w-full mt-auto bg-[#f1f4f3] dark:bg-slate-900 font-['Public_Sans'] text-xs leading-relaxed border-t border-[#c0c8cd]/15">
-<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4">
-<div class="flex flex-col gap-1 items-center md:items-start">
-<span class="font-bold text-[#00475e] text-sm">Bytové družstvo Kutná Hora Strakoschova</span>
-<span class="text-[#40484d] dark:text-slate-500">© Bytové družstvo Kutná Hora Strakoschova | IČO: 234 45 823</span>
-</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="text-[#40484d] dark:text-slate-500 hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="zakladni-info.html">Ochrana údajů</a>
-<a class="text-[#40484d] dark:text-slate-500 hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="kontakty.html">Kontakt</a>
-</div>
+    <div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4">
+        <div class="flex flex-col gap-1 items-center md:items-start">
+            <span class="font-bold text-[#00475e] text-sm">Bytové družstvo Kutná Hora Strakoschova</span>
+            <span class="text-[#40484d] dark:text-slate-500">© Bytové družstvo Kutná Hora Strakoschova | IČO: 234 45 823</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a class="text-[#40484d] dark:text-slate-500 hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="zakladni-info.html">Ochrana údajů</a>
+            <a class="text-[#40484d] dark:text-slate-500 hover:text-[#00475e] transition-opacity opacity-80 hover:opacity-100" href="kontakty.html">Kontakt</a>
+        </div>
+    </div>
 </footer>
+
 <script src="site.js"></script>
-</body></html>
+</body>
+</html>
