@@ -1,5 +1,4 @@
-# Bytové družstvo
-# Černá v Pošumaví
+# Bytové družstvo Černá v Pošumaví
 
 Webový portál Bytového družstva Kutná Hora Strakoschova.
 
