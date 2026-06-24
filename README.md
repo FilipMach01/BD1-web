@@ -1,4 +1,5 @@
-# BD Kutná Hora – Strakoschova
+#Bytové družstvo
+#Černá v Pošumaví
 
 Webový portál Bytového družstva Kutná Hora Strakoschova.
 
